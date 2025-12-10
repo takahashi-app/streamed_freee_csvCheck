@@ -1,0 +1,33 @@
+# Streamlit Secrets (パスワードなど機密情報)
+.streamlit/secrets.toml
+
+# Claude Code settings (個人設定)
+.claude/
+
+# Sample data (実データを含む可能性があるため除外)
+sample/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files
+*.xlsx
+*.csv
