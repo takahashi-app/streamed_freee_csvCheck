@@ -62,10 +62,13 @@ def check_password():
     st.markdown("---")
     st.subheader("パスワードを入力してください")
 
-    password = st.text_input("パスワード", type="password", key="password_input", on_change=None)
+    # フォームを使用してエンターキーでの送信に対応
+    with st.form("password_form"):
+        password = st.text_input("パスワード", type="password", key="password_input")
+        submitted = st.form_submit_button("ログイン", type="primary")
 
-    # エンターキーまたはボタンクリックでログイン
-    if st.button("ログイン", type="primary") or (password and len(password) > 0):
+    # フォームが送信された場合のみログイン処理を実行
+    if submitted:
         # Streamlit Secretsからパスワードを取得
         try:
             correct_password = st.secrets["passwords"]["system_password"]
