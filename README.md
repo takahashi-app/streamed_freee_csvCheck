@@ -97,14 +97,11 @@ freee_impt_streaamed/
 ├── app.py                      # Streamlitメインアプリ
 ├── requirements.txt            # 必要パッケージ
 ├── README.md                   # このファイル
-├── utils/
-│   ├── __init__.py
-│   ├── csv_processor.py        # CSV読み込み・処理
-│   ├── name_matcher.py         # 表記ゆれチェック
-│   └── excel_writer.py         # Excel出力
-└── sample/
-    ├── streamed_20251208143118.csv
-    └── 仕訳帳（新）CSV （2025年06月~2026年05月）.csv
+└── utils/
+    ├── __init__.py
+    ├── csv_processor.py        # CSV読み込み・処理
+    ├── name_matcher.py         # 表記ゆれチェック
+    └── excel_writer.py         # Excel出力
 ```
 
 ## 注意事項
@@ -114,7 +111,7 @@ freee_impt_streaamed/
 - 伝票番号は処理実行時の日時を基準に生成されます
 - 表記ゆれチェックの重み（0.5, 0.3, 0.2）は`utils/name_matcher.py`で変更可能です
 
-## トラブルシューティング
+## ローカルで使う場合のトラブルシューティング
 
 ### CSVが読み込めない
 - ファイルのエンコーディングを確認してください（CP932/Shift-JIS推奨）
@@ -127,34 +124,6 @@ freee_impt_streaamed/
 ### アプリが起動しない
 - Python 3.8以上がインストールされているか確認してください
 - `pip install -r requirements.txt`を実行して、必要なパッケージがインストールされているか確認してください
-
-## Streamlit Cloudへの展開
-
-### 1. GitHubへのプッシュ
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-**注意**: `.gitignore`により、`.streamlit/secrets.toml`はGitHubにプッシュされません。
-
-### 2. Streamlit Cloudでの設定
-
-1. [Streamlit Cloud](https://streamlit.io/cloud)にログイン
-2. リポジトリを選択して展開
-3. **Settings** → **Secrets** に移動
-4. 以下の内容を追加:
-
-```toml
-[passwords]
-system_password = "your_password_here"
-```
-
-### 3. ローカル開発での設定
-
-ローカルで開発する場合は、`.streamlit/secrets.toml`ファイルが既に作成されています。
-このファイルは`.gitignore`に含まれており、GitHubにはプッシュされません。
 
 ## ライセンス
 
