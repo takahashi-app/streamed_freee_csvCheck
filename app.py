@@ -18,7 +18,7 @@ from utils.excel_writer import ExcelWriter
 
 # ページ設定
 st.set_page_config(
-    page_title="STREAMED→freee会計インポート用csv修正アプリ",
+    page_title="STREAMED→freee会計 インポート用CSV修正アプリ",
     page_icon="📄",
     layout="wide"
 )
@@ -58,7 +58,7 @@ def open_file(file_path):
 
 def check_password():
     """パスワード認証画面"""
-    st.title("STREAMED→freee会計インポート用csv修正アプリ")
+    st.title("STREAMED→freee会計  \nインポート用CSV修正アプリ")
     st.markdown("---")
     st.subheader("パスワードを入力してください")
 
@@ -90,7 +90,7 @@ def main():
         check_password()
         return
 
-    st.title("STREAMED→freee会計インポート用csv修正アプリ")
+    st.title("STREAMED→freee会計  \nインポート用CSV修正アプリ")
     st.markdown("---")
 
     # サイドバーにステージ選択
