@@ -1,4 +1,5 @@
-# STREAMED→freee会計インポート用csv修正アプリ
+# STREAMED→freee会計
+インポート用CSV修正アプリ
 
 STREAMEDからのCSVをfreee会計へインポートするための前処理を行うWebアプリケーションです。
 
